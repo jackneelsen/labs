@@ -73,7 +73,8 @@ const findSubmissionByName = (array, fname) => {
     return findName;
 }
 
-let findJoe = findSubmissionByName(submissions, 'Joe');
+let findJoe = findSubmissionByName(submissions, 'Joseph');
+console.log("Can we find")
 console.log(findJoe);
 
 // 7: return the object in the array that has the lowest score.
