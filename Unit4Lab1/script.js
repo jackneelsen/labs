@@ -26,25 +26,38 @@ buttons.addEventListener('click', (e) => {
 })
 
 // Part 2: Make money
-const coinButton = document.querySelector('#makeMoney')
-const count = document.querySelector('#coinCount');
 
-const types = document.querySelector('#coinTypes');
+// Define my variables
+const makeMoney = document.querySelector("#makeMoney")
+const formID = document.querySelector("#formID")
+const count = document.querySelector("#coinCount")
+const coinTypes = document.querySelector("#coinTypes")
+const theCoins = document.querySelector("#theCoins")
 
-const myCoins = document.querySelector('#theCoins');
 
-coinButton.addEventListener('submit', (e) => {
+// Add an event listener that triggers when makeMoney is pressed
+formID.addEventListener('submit', (e) => {
     e.preventDefault()
-    const numCount = parseInt(count.value);
-    const typeVal = types.value;
-    const coinDiv = document.createElement('div');
-    coinDiv.className = 'coin';
-    coinDiv.innerText = typeVal;
-    for (let i = 0; i < numCount; i++) {
-        coinDiv.append()
-        myCoins.append(coinDiv);
+  
+    console.log(coinTypes.value)
+
+    for (let i = 0; i < count.value; i++) {
+        const coin = document.createElement('div')
+    coin.classList.add('coin')
+    if (coinTypes.value === 'penny') {
+        coin.innerText = 'penny'
     }
-    
+    else if (coinTypes.value === 'nickel') {
+        coin.innerText = 'nickel'
+    }
+    else if (coinTypes.value === 'dime') {
+        coin.innerText = 'dime'
+    }
+    else if (coinTypes.value === 'quarter') {
+        coin.innerText = 'quarter'
+    }
+    theCoins.append(coin)
+}
 })
 
 //Part 3
